@@ -3,6 +3,9 @@ import http from 'http';
 
 const app = express();
 
-const server = http.createServer(app);
+app.use((req, res, next) => {
+  if (req.url === '/favicon.ico') return res.status(204).end();
+  next();
+});//Remove favicon requests
 
-server.listen(3000);
+app.listen(3000);
