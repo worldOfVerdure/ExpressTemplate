@@ -1,7 +1,8 @@
+import express from 'express';
 import http from 'http';
 
-const server = http.createServer((req, res) => {
-  
-});
+const app = express();
+
+const server = http.createServer(app);
 
 server.listen(3000);
